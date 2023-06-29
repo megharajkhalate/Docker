@@ -31,5 +31,11 @@ jobs:
    #   with:
     #    image: my_image:latest
      #   run: echo "hello world"
-    - name: Run the docker image
-      run: docker run my_image:latest
+    - name: Run the build process with Docker
+      uses: addnab/docker-run-action@v3
+      with:
+        image: my_image:latest
+        run: |
+            python app.py
+   # - name: Run the docker image
+   #   run: docker run my_image:latest
