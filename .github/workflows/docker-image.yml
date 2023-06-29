@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my_image
-    - name: Build and Push docker image
+    - name: Build and Push RUN docker image
       uses: mr-smithers-excellent/docker-build-push@v6
       with:
         image: megharaj1006/test
@@ -31,12 +31,10 @@ jobs:
    #   with:
     #    image: my_image:latest
      #   run: echo "hello world"
-    - name: Run the build process with Docker
-      uses: addnab/docker-run-action@v3
+
+    - uses: addnab/docker-run-action@v3
       with:
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
-        image: my_image:latest
+        tags: my_image:latest
         run: docker run my_image
    # - name: Run the docker image
    #   run: docker run my_image:latest
