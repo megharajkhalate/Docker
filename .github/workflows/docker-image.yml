@@ -16,5 +16,12 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my_image
+    - name: Build and Push docker image
+      uses: mr-smithers-excellent/docker-build-push@v6
+      with:
+        image: megharaj1006/test
+        registry: docker.io
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
     #- name: Run the docker image
      # run: docker run my_image:latest
