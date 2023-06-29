@@ -34,8 +34,9 @@ jobs:
     - name: Run the build process with Docker
       uses: addnab/docker-run-action@v3
       with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
         image: my_image:latest
-        run: |
-            python app.py
+        run: docker run my_image
    # - name: Run the docker image
    #   run: docker run my_image:latest
