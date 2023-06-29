@@ -35,6 +35,6 @@ jobs:
     - uses: addnab/docker-run-action@v3
       with:
         tags: my_image:latest
-        run: docker run --tag my_image
+        run: docker run my_image:latest
    # - name: Run the docker image
    #   run: docker run my_image:latest
