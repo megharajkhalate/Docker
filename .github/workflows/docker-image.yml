@@ -27,9 +27,9 @@ jobs:
       with:
         tags: my_image:latest
         push: false
-    - uses: addnab/docker-run-action@v3
-      with:
-        image: my_image:latest
-        run: echo "hello world"
-    #- name: Run the docker image
-     # run: docker run my_image:latest
+  #  - uses: addnab/docker-run-action@v3
+   #   with:
+    #    image: my_image:latest
+     #   run: echo "hello world"
+    - name: Run the docker image
+      run: docker run my_image:latest
